@@ -9,3 +9,13 @@ number of parks per county and the acres of land these parks have. I have planne
 in the data cleaning process to ensure I do not run into roadblocks when it is time to develop my models,
 and with this I have made sure to dedicate enough time to the beginning part of the project so I am able 
 to have everything that I need to work with sorted through.
+
+Weekly Update #2 
+
+This week, I was able to collect the data from the various counties across Maryland to compile a dataset of all 
+of the parks in each county. I am continuing to work on the data wrangling process to have all of my files
+organized and compatible for comparison and modeling. Many of the data sources that I used did not provide their
+data in a format that was usuable, so much of the process has been locating all of the information that I need. I
+also evaluated which variables were necessary and are contributing factors in my analysis in order to remove
+unecessary data and further clean the data. In additon, I have utilized the Github Desktop app to be able to 
+organize my files between my local computer and github.
