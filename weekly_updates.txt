@@ -19,3 +19,11 @@ data in a format that was usuable, so much of the process has been locating all 
 also evaluated which variables were necessary and are contributing factors in my analysis in order to remove
 unecessary data and further clean the data. In additon, I have utilized the Github Desktop app to be able to 
 organize my files between my local computer and github.
+
+Weekly Update #3
+
+This week I was able to finish up the data cleaning process, and get all of my data into usable files. I have
+decided the factors that I am going to focus on for my modeling and data visualization. I plan to have updates
+with the data visualization in the upcoming week. I also did more research on Github and the desktop app as I 
+realized some of my changes were not commited causing confusion between a lack of consistency between my updates 
+on my local computer and the github web.
