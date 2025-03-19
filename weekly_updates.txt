@@ -27,3 +27,10 @@ decided the factors that I am going to focus on for my modeling and data visuali
 with the data visualization in the upcoming week. I also did more research on Github and the desktop app as I 
 realized some of my changes were not commited causing confusion between a lack of consistency between my updates 
 on my local computer and the github web.
+
+Weekly Update #4
+
+This week I begun working with a new data visualization tool, Tableau. I spent a lot of the time learning
+how to use the application and mapping my data into a visual representation. I looked further into my 
+analysis, and I plan to continue trying out new modeling techniques to understand the trends in my data
+and be able to effectively showcase them.
