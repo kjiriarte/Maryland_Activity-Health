@@ -1,4 +1,4 @@
-#cleaning the data
+#cleaning + wrangling the data
 
 import pandas as pd
 
@@ -58,10 +58,10 @@ merged_df = parks.merge(acres, on='Jurisdiction', how='outer') \
                .merge(eco, on='Jurisdiction', how='outer') \
                .merge(act, on='Jurisdiction', how='outer')
 
-
+mapdata = merged_df.drop([3, 20, 21])
 #print(merged_df)
 
 #code file to work with for modeling + visualization
-merged_df.to_csv("/Users/karlyjae/Documents/25-spring-kiriarte/datasets/mergedata.csv", index=False)
+mapdata.to_csv("/Users/karlyjae/Documents/25-spring-kiriarte/datasets/mapdata.csv", index=False)
 #pd.merge()
 
