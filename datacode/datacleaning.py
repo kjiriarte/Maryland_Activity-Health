@@ -59,6 +59,7 @@ merged_df = parks.merge(acres, on='Jurisdiction', how='outer') \
                .merge(act, on='Jurisdiction', how='outer')
 
 mapdata = merged_df.drop([3, 20, 21])
+mapdata = mapdata.drop(["Jurisdiction Code", "Maryland Region", "Best Available Data as of"], axis=1)
 #print(merged_df)
 
 #code file to work with for modeling + visualization
