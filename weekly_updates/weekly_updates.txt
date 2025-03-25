@@ -34,3 +34,11 @@ This week I begun working with a new data visualization tool, Tableau. I spent a
 how to use the application and mapping my data into a visual representation. I looked further into my 
 analysis, and I plan to continue trying out new modeling techniques to understand the trends in my data
 and be able to effectively showcase them.
+
+Weekly Update #5
+
+This week, I created correlation matrices and heatmaps to help me decide on which variables should be the 
+focus of my final conclusions. I explored using several different visualization applications to see which
+would be best for the purposes of my project. As I now have most of the components I need, I will create
+a readable format to explain each step of the project. I will also continue working on finding ways to 
+develop my project to give it additional substance.
