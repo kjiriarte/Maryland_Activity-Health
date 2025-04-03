@@ -42,3 +42,11 @@ focus of my final conclusions. I explored using several different visualization 
 would be best for the purposes of my project. As I now have most of the components I need, I will create
 a readable format to explain each step of the project. I will also continue working on finding ways to 
 develop my project to give it additional substance.
+
+Weekly Update #6
+
+This week in class we discussed starting our project reports. I have begun a draft that talks about the parts
+of the project that I have completed so far. I plan to add more to the draft as I get closer to finalizing 
+the project. As far as modeling, I have decided to create a tree based model to look at the impact of
+variables on one another. I plan to have my data visualizations done in the next 2 weeks so I can begin
+focusing on my project report and poster.
