@@ -50,3 +50,10 @@ of the project that I have completed so far. I plan to add more to the draft as 
 the project. As far as modeling, I have decided to create a tree based model to look at the impact of
 variables on one another. I plan to have my data visualizations done in the next 2 weeks so I can begin
 focusing on my project report and poster.
+
+Weekly Update #7
+
+This week, I sorted out my visual componenets of my project and began organizing them to make mock formats 
+of my poster for our presentation. I plan to rename the variables to make the graphs more visuallly appealing.
+I also plan on adjusting and scaling some of my data so the numbers are cleaner when represented on the key.
+I will continue to work on my poster and preparation for the report and presentation.
