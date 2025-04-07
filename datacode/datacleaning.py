@@ -36,8 +36,24 @@ act = act.pivot(index=['Jurisdiction', 'Year'] ,columns='Race', values='Value')
 act = act.reset_index()
 act = act.drop(columns=['Race'], errors='ignore')
 
+trails_pre = pd.read_csv("/Users/karlyjae/Documents/25-spring-kiriarte/datasets/MDTrails.csv")
+
+columns_to_keep = [ 'County', 'Project Type', 'Project Name', 'Award Amount']
+
+trails = trails_pre.filter(items=columns_to_keep)
+
+trails.rename(columns={'County': 'Jurisdiction'}, inplace=True)
+
+
+trails = trails.groupby('Jurisdiction').agg(
+Number_of_Parks =('Project Name', 'count'),  # or any column name that's always filled
+    Amount=('Award Amount', 'sum')
+)
+
+
 #print(act.columns.tolist())
 #print(acres)
+#print(trails)
 
 #load in dataset
 parks = pd.read_csv("/Users/karlyjae/Documents/25-spring-kiriarte/datasets/ParksData.csv")
@@ -54,12 +70,13 @@ parks.rename(columns={'Park Name': 'ParkCount'}, inplace=True)
 
 
 
-merged_df = parks.merge(acres, on='Jurisdiction', how='outer') \
+merged_df = trails.merge(acres, on='Jurisdiction', how='outer') \
                .merge(eco, on='Jurisdiction', how='outer') \
                .merge(act, on='Jurisdiction', how='outer')
 
-mapdata = merged_df.drop([3, 20, 21])
+mapdata = merged_df.drop([20, 21])
 mapdata = mapdata.drop(["Jurisdiction Code", "Maryland Region", "Best Available Data as of"], axis=1)
+mapdata.fillna(0, inplace=True)
 #print(merged_df)
 
 #code file to work with for modeling + visualization
