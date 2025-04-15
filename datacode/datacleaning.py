@@ -83,3 +83,20 @@ mapdata.fillna(0, inplace=True)
 mapdata.to_csv("/Users/karlyjae/Documents/25-spring-kiriarte/datasets/mapdata.csv", index=False)
 #pd.merge()
 
+
+columns_to_keep = ['Jurisdiction', 'Number_of_Parks', 'Amount', 'Median Household Income ($)','Percent Families in Poverty', 'Total Population',
+'White Alone', 'Black Alone','TOTAL Publicly Owned', 'All races/ ethnicities (aggregated)', 'Black or African American Non-Hispanic/Latino', 'White Non-Hispanic/Latino',
+"Percent Walked", "Unemployment Rate",
+    "Percent Civilian Population w/ Health Ins. Cov.",
+    "Bachelor's degree"]
+
+data1 = pd.read_csv("/Users/karlyjae/Documents/25-spring-kiriarte/datasets/maryland_trail_accessibility_by_county.csv")
+data2 = pd.read_csv("/Users/karlyjae/Documents/25-spring-kiriarte/datasets/mapdata.csv")
+dataused = data2.filter(items=columns_to_keep)
+
+data1.rename(columns={'name_right': 'Jurisdiction'}, inplace=True)
+
+
+merged_df = data1.merge(dataused, on='Jurisdiction', how='outer')
+           
+merged_df.to_csv("/Users/karlyjae/Documents/25-spring-kiriarte/datasets/mergedf.csv", index = False)
