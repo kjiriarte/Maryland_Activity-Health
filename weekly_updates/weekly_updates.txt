@@ -57,3 +57,11 @@ This week, I sorted out my visual componenets of my project and began organizing
 of my poster for our presentation. I plan to rename the variables to make the graphs more visuallly appealing.
 I also plan on adjusting and scaling some of my data so the numbers are cleaner when represented on the key.
 I will continue to work on my poster and preparation for the report and presentation.
+
+Weekly Update #8
+
+The main focus for this week is to finish the poster for the final presentation session. Working on this alongside
+the project report will lead me to be more prepared for questions relating to my project, as well as make sure
+that the main information that I want to present is properly extracted and represented. I have ideas for future 
+expansions that I plan on mentioning, and if I finish other components of my project I will work on the additions
+that I have in mind.
