@@ -20,21 +20,14 @@ merged_df.rename(columns={'Number_of_Parks': 'Parks #', 'Percent Families in Pov
 }, inplace=True)
 target = "Activity %" 
 
-
-
-
-
-
 features = [
     "Parks #", "Amount", "MHI (Income)",
     "Poverty %", "Population",
     "Public (Acres)",
     "Walked %", "Unemployment Rate",
     "% w/ Health Ins.",
-    "Bachelor's degree"
+    "Bachelor's degree", "Accessibility score", "Number of Trails"
 ]
-
-
 
 
 # Drop rows with missing values
@@ -55,7 +48,11 @@ ridge_cv.fit(X_scaled, y)
 print(f"Best alpha: {ridge_cv.alpha_}")
 print(f"R² score: {ridge_cv.score(X_scaled, y):.4f}")
 
-#Make plots based on Ridge assessment
+#Coefficients for presentation 
+for feature, coef in zip(X.columns, ridge_cv.coef_):
+    print(f"{feature}: {coef:.4f}")
+
+
 
 ridge = RidgeCV(alphas=np.logspace(-3, 3, 50), scoring='r2')
 ridge.fit(X_scaled, y)

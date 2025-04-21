@@ -50,11 +50,6 @@ Number_of_Parks =('Project Name', 'count'),  # or any column name that's always 
     Amount=('Award Amount', 'sum')
 )
 
-
-#print(act.columns.tolist())
-#print(acres)
-#print(trails)
-
 #load in dataset
 parks = pd.read_csv("/Users/karlyjae/Documents/25-spring-kiriarte/datasets/ParksData.csv")
 #rename key to be able to merge datasets
@@ -64,10 +59,6 @@ parks.rename(columns={'County': 'Jurisdiction'}, inplace=True)
 parks = parks.groupby('Jurisdiction').count().reset_index()
 parks =parks.drop(parks.columns[[2]], axis=1)
 parks.rename(columns={'Park Name': 'ParkCount'}, inplace=True)
-
-
-#print (parks)
-
 
 
 merged_df = trails.merge(acres, on='Jurisdiction', how='outer') \
@@ -81,8 +72,8 @@ mapdata.fillna(0, inplace=True)
 
 #code file to work with for modeling + visualization
 mapdata.to_csv("/Users/karlyjae/Documents/25-spring-kiriarte/datasets/mapdata.csv", index=False)
-#pd.merge()
 
+#defining columns to manipulate dataset
 
 columns_to_keep = ['Jurisdiction', 'Number_of_Parks', 'Amount', 'Median Household Income ($)','Percent Families in Poverty', 'Total Population',
 'White Alone', 'Black Alone','TOTAL Publicly Owned', 'All races/ ethnicities (aggregated)', 'Black or African American Non-Hispanic/Latino', 'White Non-Hispanic/Latino',
@@ -101,8 +92,6 @@ merged_df = data1.merge(dataused, on='Jurisdiction', how='outer')
            
 merged_df.to_csv("/Users/karlyjae/Documents/25-spring-kiriarte/datasets/mergedf.csv", index = False)
 
-
-# df_county_trails["accessibility_score"] = (
-#     df_county_trails["total_length"] * df_county_trails["avg_rating"]
-# ) / df_county_trails["avg_difficulty"]
+#Creation of accessibility score variable
+#merged_df["accessibility_score"] = (merged_df["total_length"] * merged_df["avg_rating"] ) / merged_df["avg_difficulty"]
  
