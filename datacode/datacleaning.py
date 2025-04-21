@@ -100,3 +100,9 @@ data1.rename(columns={'name_right': 'Jurisdiction'}, inplace=True)
 merged_df = data1.merge(dataused, on='Jurisdiction', how='outer')
            
 merged_df.to_csv("/Users/karlyjae/Documents/25-spring-kiriarte/datasets/mergedf.csv", index = False)
+
+
+# df_county_trails["accessibility_score"] = (
+#     df_county_trails["total_length"] * df_county_trails["avg_rating"]
+# ) / df_county_trails["avg_difficulty"]
+ 

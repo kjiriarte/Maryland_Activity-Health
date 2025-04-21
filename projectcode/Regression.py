@@ -11,16 +11,31 @@ import seaborn as sns
 
 merged_df = pd.read_csv("/Users/karlyjae/Documents/25-spring-kiriarte/datasets/mergedf.csv")
 #rename columns please
-target = "All races/ ethnicities (aggregated)" 
+
+merged_df.rename(columns={'Number_of_Parks': 'Parks #', 'Percent Families in Poverty': 'Poverty %', 'TOTAL Publicly Owned': 'Public (Acres)', 'Total Population': 'Population',
+'All races/ ethnicities (aggregated)': 'Activity %', 'Black or African American Non-Hispanic/Latino':'Activity % (Black)', 'White Non-Hispanic/Latino':'Activity %(White)', 'Percent Walked':'Walked %',
+'Percent Civilian Population w/ Health Ins. Cov.':'% w/ Health Ins.', 'Median Household Income ($)': 'MHI (Income)', "accessibility_score":"Accessibility score",
+"num_trails":"Number of Trails"
+
+}, inplace=True)
+target = "Activity %" 
+
+
+
+
+
 
 features = [
-    "Number_of_Parks", "Amount", "Median Household Income ($)",
-    "Percent Families in Poverty", "Total Population",
-    "TOTAL Publicly Owned",
-    "Percent Walked", "Unemployment Rate",
-    "Percent Civilian Population w/ Health Ins. Cov.",
+    "Parks #", "Amount", "MHI (Income)",
+    "Poverty %", "Population",
+    "Public (Acres)",
+    "Walked %", "Unemployment Rate",
+    "% w/ Health Ins.",
     "Bachelor's degree"
 ]
+
+
+
 
 # Drop rows with missing values
 df_clean = merged_df.dropna(subset=features + [target])
@@ -50,20 +65,20 @@ coef_df = pd.DataFrame({
     "Coefficient": ridge.coef_
 }).sort_values(by="Coefficient", ascending=False)
 
-top_custom_features = coef_df[~coef_df["Feature"].isin(["TOTAL Publicly Owned"])]["Feature"].head(2).tolist()
+top_custom_features = coef_df[~coef_df["Feature"].isin(["Public (Acres)"])]["Feature"].head(2).tolist()
 
 # Always include accessibility_score
 if "accessibility_score" not in top_custom_features:
-    top_custom_features.append("accessibility_score")
+    top_custom_features.append("Accessibility score")
 
 if "num_trails" not in top_custom_features:
-    top_custom_features.append("num_trails")
+    top_custom_features.append("Number of Trails")
 
 # --- Plot each feature ---
 for feature in top_custom_features:
     plt.figure(figsize=(6, 4))
     sns.scatterplot(data=df_clean, x=feature, y=target)
-    sns.regplot(data=df_clean, x=feature, y=target, scatter=False, color="red")
+    sns.regplot(data=df_clean, x=feature, y=target, scatter=False, color="green")
     plt.title(f"{feature} vs {target}")
     plt.xlabel(feature)
     plt.ylabel("Physical Activity Level (%)")
